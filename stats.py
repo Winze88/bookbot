@@ -15,3 +15,14 @@ def char_count(text):
         else:
             counted_chars[char] += 1
     return counted_chars
+
+def sort_on(items):
+    return items["num"]
+
+def sort_dict(dictionary):
+    new_dict = []
+    for key in dictionary:
+        if key.isalpha():
+            new_dict.append({"char": key, "num": dictionary[key]})
+    new_dict = sorted(new_dict, key=sort_on, reverse=True)
+    return new_dict
